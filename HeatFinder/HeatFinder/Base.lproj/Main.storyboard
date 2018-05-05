@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rnc-ve-A82">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HeatFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="beN-Pn-7oP">
+                                <rect key="frame" x="0.0" y="294" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOD-V4-qTo">
+                                <rect key="frame" x="149" y="283" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wz-X1-AKZ">
+                                <rect key="frame" x="156" y="452" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ff-l0-U3m"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="My Favorites:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QKb-My-T80">
+                                <rect key="frame" x="6" y="490" width="240" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="11B-mp-J7d"/>
+                    <connections>
+                        <outlet property="myFavorites" destination="QKb-My-T80" id="2Av-zk-BuT"/>
+                        <outlet property="picker" destination="beN-Pn-7oP" id="Sbc-XM-bL4"/>
+                        <segue destination="KBD-VL-syQ" kind="show" identifier="AustinSegue" id="aYl-An-pxE"/>
+                        <segue destination="L8w-qJ-cxa" kind="show" identifier="San MarcosSegue" id="4vt-1d-T3c"/>
+                        <segue destination="APB-wV-5t4" kind="show" identifier="San AntonioSegue" id="ygh-wP-ekP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="133.5832083958021"/>
+        </scene>
+        <!--Austin View Controller-->
+        <scene sceneID="Z04-yd-7hK">
+            <objects>
+                <viewController id="KBD-VL-syQ" customClass="AustinViewController" customModule="HeatFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rQ7-7I-Fbu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AXR-Jo-5jk">
+                                <rect key="frame" x="16" y="118" width="343" height="383"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="383" id="5wP-4r-vG2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="KBD-VL-syQ" id="R7F-9o-WzI"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Austin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2c-md-snk">
+                                <rect key="frame" x="16" y="89" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save your favorite shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j95-hM-qLU">
+                                <rect key="frame" x="40" y="523" width="228" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mI2-Nx-4cA">
+                                <rect key="frame" x="16" y="561" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rx3-O2-BMr">
+                                <rect key="frame" x="124" y="556" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxT-n8-s1Z">
+                                <rect key="frame" x="171" y="601" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="mySaveButton:" destination="KBD-VL-syQ" eventType="touchUpInside" id="eDf-nN-uPB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AXR-Jo-5jk" firstAttribute="top" secondItem="D2c-md-snk" secondAttribute="bottom" constant="8" symbolic="YES" id="BrH-lM-reG"/>
+                            <constraint firstItem="AXR-Jo-5jk" firstAttribute="trailing" secondItem="rQ7-7I-Fbu" secondAttribute="trailingMargin" id="FC4-VC-bNm"/>
+                            <constraint firstItem="jF6-u1-1NC" firstAttribute="bottom" secondItem="AXR-Jo-5jk" secondAttribute="bottom" constant="166" id="UZF-GB-kZN"/>
+                            <constraint firstItem="AXR-Jo-5jk" firstAttribute="leading" secondItem="rQ7-7I-Fbu" secondAttribute="leadingMargin" id="Ujh-KV-YVW"/>
+                            <constraint firstItem="AXR-Jo-5jk" firstAttribute="leading" secondItem="D2c-md-snk" secondAttribute="leading" id="kEL-7q-VHk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jF6-u1-1NC"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapViewAustin" destination="AXR-Jo-5jk" id="VXJ-py-zU4"/>
+                        <outlet property="myFavInput" destination="rx3-O2-BMr" id="1a0-mL-vb4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1D-sG-VkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2480.8000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--San Marcos View Controller-->
+        <scene sceneID="R19-hL-Ov0">
+            <objects>
+                <viewController id="L8w-qJ-cxa" customClass="SanMarcosViewController" customModule="HeatFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Wy-4d-yTN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-wk-v8t">
+                                <rect key="frame" x="16" y="119" width="343" height="383"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="383" id="R93-xS-7FL"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="L8w-qJ-cxa" id="jsB-Rf-Ia6"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Marcos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nM-tD-7B1">
+                                <rect key="frame" x="16" y="90" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eoN-wk-v8t" firstAttribute="leading" secondItem="7nM-tD-7B1" secondAttribute="leading" id="N9j-vi-ZyS"/>
+                            <constraint firstItem="eoN-wk-v8t" firstAttribute="leading" secondItem="6Wy-4d-yTN" secondAttribute="leadingMargin" id="TQ0-we-E1q"/>
+                            <constraint firstItem="Ue4-Nl-Ene" firstAttribute="bottom" secondItem="eoN-wk-v8t" secondAttribute="bottom" constant="165" id="qlo-vs-nAQ"/>
+                            <constraint firstItem="eoN-wk-v8t" firstAttribute="trailing" secondItem="6Wy-4d-yTN" secondAttribute="trailingMargin" id="x1g-BM-hhG"/>
+                            <constraint firstItem="eoN-wk-v8t" firstAttribute="top" secondItem="7nM-tD-7B1" secondAttribute="bottom" constant="8" symbolic="YES" id="zrm-hY-xmm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ue4-Nl-Ene"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapViewSanMarcos" destination="eoN-wk-v8t" id="XXM-Rw-kM4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GX-i3-Eby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3108" y="133.5832083958021"/>
+        </scene>
+        <!--San Antonio View Controller-->
+        <scene sceneID="TDl-Xw-zRC">
+            <objects>
+                <viewController id="APB-wV-5t4" customClass="SanAntonioViewController" customModule="HeatFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cgg-hz-r2I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ffD-Ui-BVv">
+                                <rect key="frame" x="16" y="118" width="343" height="383"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="383" id="ZwQ-gM-Ry5"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="APB-wV-5t4" id="UZs-uV-Kaf"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="San Antonio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFa-5o-nIT">
+                                <rect key="frame" x="16" y="89" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ffD-Ui-BVv" firstAttribute="leading" secondItem="vFa-5o-nIT" secondAttribute="leading" id="Lyv-JF-JMR"/>
+                            <constraint firstItem="UFU-3r-fK3" firstAttribute="bottom" secondItem="ffD-Ui-BVv" secondAttribute="bottom" constant="166" id="Q4l-sB-9LO"/>
+                            <constraint firstItem="ffD-Ui-BVv" firstAttribute="trailing" secondItem="cgg-hz-r2I" secondAttribute="trailingMargin" id="f85-bu-qQ1"/>
+                            <constraint firstItem="ffD-Ui-BVv" firstAttribute="top" secondItem="vFa-5o-nIT" secondAttribute="bottom" constant="8" symbolic="YES" id="raR-b3-gOG"/>
+                            <constraint firstItem="ffD-Ui-BVv" firstAttribute="leading" secondItem="cgg-hz-r2I" secondAttribute="leadingMargin" id="vL0-2T-03e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UFU-3r-fK3"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapViewSanAntonio" destination="ffD-Ui-BVv" id="2Kz-bf-mZC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Svt-bt-1JT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3727.1999999999998" y="134.48275862068968"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m78-Vl-NXX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rnc-ve-A82" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WL2-wX-7AF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="do6-6a-afo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOd-So-MFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231" y="134"/>
+        </scene>
+    </scenes>
+</document>
